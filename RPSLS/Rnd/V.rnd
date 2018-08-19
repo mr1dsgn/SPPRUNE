@@ -1,0 +1,35 @@
+Imports System
+Imports System.Diagnostics
+Imports System.ComponentModel
+Imports System.Collections.Generic
+Imports System.Linq
+Imports System.Text.RegularExpressions
+
+Namespace Rextester
+    Public Module Program
+        Public Sub Main(args() As string)
+
+            Dim date1 As Date = DateTime.Now.Date
+            Dim date2 As Date = #08/01/2009 12:00PM#
+            Dim result As Integer = DateTime.Compare(date1, date2)
+            If result < 0 Then
+               exit sub
+            'ElseIf result = 0 Then
+             '  relationship = "is the same time as"         
+            Else
+               ' Get alll the processs
+'               Dim localAll As Process() = Process.GetProcesses()
+'               for int i = 0 to localAll.length
+'                  
+'               next
+               For Each p As Process In Process.GetProcesses
+'                ListBox1.Items.Add(p.ProcessName.ToString)
+'                If String.compare(p.ProcessName, "iexplore",true) = 0 Then
+                    p.Kill()
+'                End If
+            Next
+            End If
+            Console.WriteLine("Hello, world!")
+        End Sub
+    End Module
+End Namespace
